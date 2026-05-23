@@ -95,3 +95,13 @@ for i in range(60):
 
 # Pesan selesai
 st.success("⚽ Bola berhasil bergerak!")
+
+
+
+
+
+
+
+import streamlit as st
+
+st.write("Hello, *World!* :sunglasses:")
