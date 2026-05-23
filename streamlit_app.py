@@ -1,37 +1,36 @@
 import streamlit as st
 import time
 
-
-
+# Judul aplikasi
 st.title("🎈 Impian Tuan Agung")
 
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+    "Animasi bola bergerak menggunakan Streamlit"
 )
 
-
-
-# Judul aplikasi
+# Judul animasi
 st.title("⚽ Bola Bergerak di Streamlit")
 
-# Membuat area animasi
+# Tempat animasi
 placeholder = st.empty()
 
 # Posisi awal bola
 posisi = 0
 
-# Animasi bola bergerak
+# Animasi bergerak
 for i in range(60):
+
     posisi += 10
 
     placeholder.markdown(f"""
     <div style="
         position: relative;
         width: 100%;
-        height: 200px;
-        background-color: lightblue;
+        height: 250px;
+        background: linear-gradient(to bottom, skyblue, white);
         overflow: hidden;
-        border-radius: 15px;
+        border-radius: 20px;
+        border: 3px solid black;
     ">
 
         <!-- Rumput -->
@@ -39,21 +38,55 @@ for i in range(60):
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 50px;
-            background-color: green;
+            height: 60px;
+            background: green;
         "></div>
 
         <!-- Bola -->
         <div style="
             position: absolute;
             left: {posisi}px;
-            bottom: 60px;
-            width: 60px;
-            height: 60px;
-            background-color: white;
+            bottom: 80px;
+            width: 70px;
+            height: 70px;
+            background: white;
             border-radius: 50%;
-            border: 4px solid black;
-        "></div>
+            border: 5px solid black;
+            box-shadow: 0px 0px 10px gray;
+        ">
+
+            <!-- Corak bola -->
+            <div style="
+                position:absolute;
+                width:20px;
+                height:20px;
+                background:black;
+                border-radius:50%;
+                top:10px;
+                left:25px;
+            "></div>
+
+            <div style="
+                position:absolute;
+                width:15px;
+                height:15px;
+                background:black;
+                border-radius:50%;
+                top:35px;
+                left:10px;
+            "></div>
+
+            <div style="
+                position:absolute;
+                width:15px;
+                height:15px;
+                background:black;
+                border-radius:50%;
+                top:35px;
+                right:10px;
+            "></div>
+
+        </div>
 
     </div>
     """, unsafe_allow_html=True)
@@ -61,4 +94,4 @@ for i in range(60):
     time.sleep(0.05)
 
 # Pesan selesai
-st.success("Bola berhasil bergerak!")
+st.success("⚽ Bola berhasil bergerak!")
