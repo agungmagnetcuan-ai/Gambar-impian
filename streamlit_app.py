@@ -6,5 +6,4 @@ st.write(
 )
 
 
-
 st.image("sunrise.jpg", caption="Sunrise by the mountains")
